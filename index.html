@@ -17,16 +17,18 @@
         <input type="number" id="input_height" name="height" min="1" value="10">
         Grid Width:
         <input type="number" id="input_width" name="width" min="1" value="10">
-        <input type="submit" onclick="gridCall();">
+        <input type="submit" onclick="refreshGrid()">
     </form>
-
-    <center><button class="newGrid">New Grid</button></center>
 
     <h2>Pick A Color</h2>
     <input type="color" id="colorPicker" onclick="changeColor()">
 
     <h2>Design Canvas</h2>
+    <center><button class="newGrid">Clear Grid</button></center>
+
     <div id="container"></div>
+
+
 
     <script src="designs.js"></script>
 </body>
