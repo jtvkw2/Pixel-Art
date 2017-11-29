@@ -38,17 +38,22 @@ td {
 input[type=number] {
     width: 6em;
 }
-
-
-.grid { margin:1em auto; border-collapse:collapse }
-.grid td {
-    cursor:pointer;
-    width:30px; height:30px;
-    border:1px solid #ccc;
-    text-align:center;
-    font-family:sans-serif; font-size:13px
+#container {
+	position: relative;
+	top: 30px;
+	outline:2px solid #000;
+	font-size: 0;
+	margin:auto;
+	height:960px;
+	width:960px;
+	padding: 0;
+	border: none;
 }
-.grid td.clicked {
-    background-color:yellow;
-    font-weight:bold; color:red;
+
+.grid {
+	margin:0;
+	padding:0;
+	border:none;
+	outline:1px solid #000;
+	display:inline-block;
 }
