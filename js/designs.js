@@ -2,45 +2,36 @@
 // Select size input
 
 // When size is submitted by the user, call makeGrid()
-//function that creates grid
+//Function that creates grid
 function makeGrid(x, y) {
   for (var rows = 0; rows < x; rows++) {
     for (var columns = 0; columns < y; columns++) {
-      $("#container").append("<div class='grid'></div>");
+      $("#grid").append("<div class='layout'></div>");
     };
   };
-  $(".grid").height(960/x);
-  $(".grid").width(960/y);
+  $(".layout").height(800/x);
+  $(".layout").width(800/y);
 };
 
-// function that clears the grid
-function clearGrid(){
-  $(".grid").remove();
-};
-
-//function to call to create a new grid
+//Function to call to create a new grid
 function refreshGrid(){
-  clearGrid();
+  $(".layout").remove();
   makeGrid(document.getElementById("input_height").value, document.getElementById("input_width").value);
 };
 
-//creates a 10x10 grid onload
-//then contains funtions for when grid is clicked and starting a new grid
+//Creates grid on submit
+//Also contains functions for changing color
 $('#sizePicker').submit(function(event) {
   event.preventDefault();
   refreshGrid();
-  $(".grid").click(function() {
+  $(".layout").click(function() {
     $(this).css("background-color", document.getElementById("colorPicker").value);
   });
 
   $(".newGrid").click(function() {
     refreshGrid();
-    $(".grid").click(function() {
+    $(".layout").click(function() {
       $(this).css("background-color", document.getElementById("colorPicker").value);
     });
   });
-});
-
-$( document ).ready(function() {
-    refreshGrid();
 });
